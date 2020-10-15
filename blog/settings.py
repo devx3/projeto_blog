@@ -27,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '!4c7gv&2)+9g5cuj!k-o8&$&)kuw+_xkbi@=%mn=7ac(^ktw8)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['blog.enjambrex.tk']
 
 
 # Application definition
@@ -89,11 +89,11 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'blog_django',
+        'NAME': 'blog',
         'HOST': '127.0.0.1',
         'PORT': '5432',
-        'USER': 'postgres',
-        'PASSWORD': 'root'
+        'USER': 'devx3',
+        'PASSWORD': 'er!666#SQL'
     }
 }
 
@@ -155,7 +155,12 @@ MESSAGE_TAGS = {
     constants.INFO: 'alert-info',
 }
 
+SECURE_PROXY_SSL_HEADER = True
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
 try:
     from .local_settings import *
-except:
+except Exception:
     pass
